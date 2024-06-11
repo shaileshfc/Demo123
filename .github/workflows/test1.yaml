@@ -18,8 +18,10 @@ jobs:
       # Checks out repository under $GITHUB_WORKSPACE, so job can access it
       - uses: actions/checkout@v2
 
-      - name: Run a one-line script
-        run: echo Hello, world!
+      - name: Running static code analysis with Checkov
+        run: |
+          pip install checkov
+          checkov --framework terraform --directory $GITHUB_WORKSPACE/
 
       - name: Run a multi-line script
         run: |
