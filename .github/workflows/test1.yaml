@@ -18,15 +18,15 @@ jobs:
       # Checks out repository under $GITHUB_WORKSPACE, so job can access it
       - uses: actions/checkout@v2
 
-      - name: Running static code analysis with Checkov
-        run: |
-          pip install checkov
-          checkov --framework terraform --directory $GITHUB_WORKSPACE/
+      ##- name: Running static code analysis with Checkov
+        #run: |
+         # pip install checkov
+          #checkov --framework terraform --directory $GITHUB_WORKSPACE/
 
-      - name: Run a multi-line script
-        run: |
-          echo Add other actions to build,
-          echo test, and deploy your project.
+      #- name: Run a multi-line script
+       # run: |
+        #  echo Add other actions to build,
+         # echo test, and deploy your project.
       - name: Checkov GitHub Action
         uses: bridgecrewio/checkov-action@v12.1347.0
         with:
